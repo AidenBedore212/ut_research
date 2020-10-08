@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h3>KNN Prediction acuracy for MNIST data set</h3>
+</head>
+
+
+<div id="myDiv">
+  <form action="/" method="POST">
+    <p>Number Of Nearest Neighbors:</p>
+    <p><input type='number' min="1" name="knn" value="1" required autofocus></p>
+    <input type="submit" value="Calculate Accuracy" name="indexButton">
+  </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form action="/" METHOD="POST">
+  <label for="model_to_disp">Select a dimensionally reduction method to view:</label>
+  <select name="model_to_disp" id="model_to_disp">
+    <option value="PCA">PCA</option>
+    <option value="TSNE">TSNE</option>
+    <option value="PHATE">PHATE</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Display Graph" name="indexButton">
+</form>
+</div>
+<br>
+<br>
+
+
+{% if model_to_disp == "PCA" %}
+<img src="\static\pca_pic.JPG" alt="PCA IMAGE">
+{% endif %}
+
+{% if model_to_disp == "TSNE" %}
+<img src="\static\tsne_pic.jpg" alt="TSNE IMAGE">
+{% endif %}
+
+{% if model_to_disp == "PHATE" %}
+<img src="\static\phate_pic.JPG" alt="PHATE IMAGE">
+{% endif %}
+
+<div id="div1"></div>
+</html>
